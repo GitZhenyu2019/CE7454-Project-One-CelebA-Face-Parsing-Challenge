@@ -20,17 +20,17 @@ def get_parameters():
     parser.add_argument("--save_dir", type=str, default="./outputs")
     parser.add_argument("--masks_out_dir", type=str, default="./masks")
     parser.add_argument("--ckpt_path", type=str, default="./solution/ckpt.pth")
-    parser.add_argument("--log_dir", type=str, default="./runs/exp1")    # TensorBoard
+    parser.add_argument("--log_dir", type=str, default="./runs")    # TensorBoard
 
     # Model
     parser.add_argument("--in_channels", type=int, default=3)
     parser.add_argument("--num_classes", type=int, default=19)
     parser.add_argument("--base_channels", type=int, default=15)    # make sure that #trainable params<1,821,085
-    parser.add_argument("--dropout_p", type=float, default=0.2)     # dropout during training for regularisation
+    parser.add_argument("--dropout_p", type=float, default=0.0)     # dropout during training for regularisation
 
     # Train
-    parser.add_argument("--epochs", type=int, default=100)
-    parser.add_argument("--batch_size", type=int, default=4)
+    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--imsize", type=int, default=512)      # for CelebAMask-HQ dataset
 
@@ -38,12 +38,12 @@ def get_parameters():
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--beta1", type=float, default=0.95)    # Adam momentum
     parser.add_argument("--beta2", type=float, default=0.98)    # Adam momentum
-    parser.add_argument("--weight_decay", type=float, default=1e-4)     # L2 regularisation
+    parser.add_argument("--weight_decay", type=float, default=0.0)     # L2 regularisation
     parser.add_argument("--warmup_epochs", type=int, default=2)
     parser.add_argument("--min_lr", type=float, default=1e-5)
 
     # Others
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--seed", type=int, default=88)
     parser.add_argument("--use_tensorboard", type=str, default="true")
     parser.add_argument("--device", type=str, default="cuda")   # "cuda" or "cpu"
 
@@ -55,3 +55,4 @@ def get_parameters():
     args = parser.parse_args()
     args.use_tensorboard = str2bool(args.use_tensorboard)
     return args
+
