@@ -51,6 +51,9 @@ class FaceParsingDataset(Dataset):
             mask = torch.from_numpy(np.array(mask, dtype=np.int64))     # [H, W] long tensor
         else:
             mask = torch.tensor(0)      # placeholder
+
+        if mask is not None and idx == 0:
+            print("mask unique values:", torch.unique(mask)) # todo modify
         
         return img, mask
 
@@ -62,3 +65,4 @@ def build_loader(img_dir, mask_dir, imsize, batch_size, num_workers, shuffle=Tru
 
 
         
+
