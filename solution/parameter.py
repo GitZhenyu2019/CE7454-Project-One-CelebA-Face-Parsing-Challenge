@@ -29,7 +29,7 @@ def get_parameters():
     parser.add_argument("--dropout_p", type=float, default=0.0)     # dropout during training for regularisation
 
     # Train
-    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--imsize", type=int, default=512)      # for CelebAMask-HQ dataset
@@ -55,4 +55,5 @@ def get_parameters():
     args = parser.parse_args()
     args.use_tensorboard = str2bool(args.use_tensorboard)
     return args
+
 
