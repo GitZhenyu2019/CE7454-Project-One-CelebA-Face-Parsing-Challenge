@@ -2,28 +2,28 @@
 
 ## Description of the files
 
-- `train.py`  
+- `solution/train.py`  
   Entry point for training. Loads data, builds the model, and trains it.
 
-- `trainer.py`  
+- `solution/trainer.py`  
   Defines the `Trainer` class which handles model initialization, training loop, optimizer, scheduler, and checkpoint saving.
 
-- `tester.py`  
+- `solution/tester.py`  
   Defines the `Tester` class for running inference on validation/test images and saving predicted masks.
 
-- `test.py`  
+- `solution/test.py`  
   Entry point for evaluation. Uses `Tester` to predict masks for the validation/test set.
 
-- `model.py`  
+- `solution/model.py`  
   Contains the implementation of the UNet model.
 
-- `data_loader.py`  
+- `solution/data_loader.py`  
   Dataset and dataloader utilities for loading images and corresponding masks.
 
-- `utils.py`  
+- `solution/utils.py`  
   Helper functions, including loss functions (cross entropy + dice), scheduler, saving masks, and counting parameters.
 
-- `parameter.py`  
+- `solution/parameter.py`  
   Contains the configuration function `get_parameters()` which stores hyperparameters and paths.
 
 - `solution/ckpt.pth`  
@@ -38,7 +38,7 @@
 
 - [PyTorch](https://pytorch.org/)  
 - [torchvision](https://pytorch.org/vision/stable/index.html)  
-- [Pillow (PIL)](https://python-pillow.org/)  
+- [Pillow (PIL)](https://pypi.org/project/pillow/)  
 - [numpy](https://numpy.org/)  
 
 ---
