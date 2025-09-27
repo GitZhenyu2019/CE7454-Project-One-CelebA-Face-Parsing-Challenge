@@ -80,7 +80,7 @@ def save_mask_png(id_mask: np.ndarray, out_path: str):
     id_mask: [H,W] uint8, value in 0..18
     save as SINGLE-CHANNEL png images with label id as pixels
     """
-    img = Image.fromarray(id_mask.astype(np.uint8), mode="P")
+    img = Image.fromarray(id_mask.astype(np.uint8), mode="L")
     img.save(out_path)   
 
 def logits_to_id_mask(logits: torch.Tensor) -> np.ndarray:
@@ -95,4 +95,5 @@ def logits_to_id_mask(logits: torch.Tensor) -> np.ndarray:
 # =============== Param counter =====================
 def count_trainable_params(model) -> int:
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
 
