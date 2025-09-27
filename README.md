@@ -45,10 +45,9 @@
 
 ## Instructions for Testing
 
-1. **Training (optional)**  
-   Run:
-   ```bash
-   python train.py
+```bash
+pip install -r solution/requirements.txt
+python solution/run.py --input /path/to/input.jpg --output /path/to/output.png --weights solution/ckpt.pth
 
 
 
