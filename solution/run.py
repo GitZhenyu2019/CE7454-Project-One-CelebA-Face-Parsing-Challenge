@@ -6,8 +6,8 @@
 # @Email:  yaozhenyu2019@outlook.com
 
 # This is for Codabench to invoke from an external program：
-# pip install -r requirements.txt
-# python3 run.py --input /path/to/input-image.jpg --output /path/to/output-mask.png --weights ckpt.pth
+# pip install -r solution/requirements.txt
+# python3 solution/run.py --input /path/to/input-image.jpg --output /path/to/output-mask.png --weights solution/ckpt.pth
 
 import argparse, os, numpy as np, torch
 from PIL import Image
@@ -44,3 +44,4 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = load_model(args.weights, device)
     infer_single(model, args.input, args.output, device)
+
