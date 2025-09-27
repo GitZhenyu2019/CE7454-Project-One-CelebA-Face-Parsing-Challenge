@@ -14,6 +14,12 @@
 - `solution/test.py`  
   Entry point for evaluation. Uses `Tester` to predict masks for the validation/test set.
 
+- `solution/model_utils.py`  
+  Defines components of UNet used by `solution/model.py`.
+
+- `solution/run.py`  
+  Main entry point for inference as required by the competition. Loads a trained checkpoint and performs segmentation on a single input image.
+
 - `solution/model.py`  
   Contains the implementation of the UNet model.
 
