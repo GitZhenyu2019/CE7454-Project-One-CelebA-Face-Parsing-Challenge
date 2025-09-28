@@ -59,7 +59,7 @@ class Trainer:
                 labels = labels.to(self.device, non_blocking=True)      # [B, H, W]
 
                 logits = self.model(imgs)                               # [B, 19, H, W]
-                loss, ce, dl = combined_loss(logits=logits, targets=labels, ce_weight=0.6)
+                loss, ce, dl = combined_loss(logits=logits, targets=labels, ce_weight=0.5)
 
                 self.optimizer.zero_grad(set_to_none=True)
                 loss.backward()
@@ -96,5 +96,6 @@ class Trainer:
         
 
         
+
 
 
