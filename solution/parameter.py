@@ -30,12 +30,12 @@ def get_parameters():
 
     # Train
     parser.add_argument("--epochs", type=int, default=50)
-    parser.add_argument("--batch_size", type=int, default=4)
+    parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--imsize", type=int, default=512)      # for CelebAMask-HQ dataset
 
     # Optim
-    parser.add_argument("--lr", type=float, default=1e-3)
+    parser.add_argument("--lr", type=float, default=2e-3)
     parser.add_argument("--beta1", type=float, default=0.95)    # Adam momentum
     parser.add_argument("--beta2", type=float, default=0.999)    # Adam momentum
     parser.add_argument("--weight_decay", type=float, default=0.0)     # L2 regularisation
@@ -55,6 +55,7 @@ def get_parameters():
     args = parser.parse_args()
     args.use_tensorboard = str2bool(args.use_tensorboard)
     return args
+
 
 
 
