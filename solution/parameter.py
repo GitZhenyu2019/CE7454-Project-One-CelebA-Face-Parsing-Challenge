@@ -26,7 +26,7 @@ def get_parameters():
     parser.add_argument("--in_channels", type=int, default=3)
     parser.add_argument("--num_classes", type=int, default=19)
     parser.add_argument("--base_channels", type=int, default=15)    # make sure that #trainable params<1,821,085
-    parser.add_argument("--dropout_p", type=float, default=0.2)     # dropout during training for regularisation
+    parser.add_argument("--dropout_p", type=float, default=0.0)     # dropout during training for regularisation
 
     # Train
     parser.add_argument("--epochs", type=int, default=100)
@@ -55,6 +55,7 @@ def get_parameters():
     args = parser.parse_args()
     args.use_tensorboard = str2bool(args.use_tensorboard)
     return args
+
 
 
 
