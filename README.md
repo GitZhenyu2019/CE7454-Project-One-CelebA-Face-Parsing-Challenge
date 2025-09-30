@@ -32,7 +32,7 @@
 - `solution/parameter.py`  
   Contains the configuration function `get_parameters()` which stores hyperparameters and paths.
 
-- `solution/color.py`
+- `solution/color.py`  
   Colorize single channel gray scale masks to RGB masks through a color palette.
 
 - `solution/ckpt.pth`  
