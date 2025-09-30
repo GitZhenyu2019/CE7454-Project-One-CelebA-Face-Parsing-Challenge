@@ -52,8 +52,17 @@
 ## Instructions for Testing
 
 ```bash
+- single image prediction
+
 pip install -r solution/requirements.txt
 python solution/run.py --input /path/to/input.jpg --output /path/to/output.png --weights solution/ckpt.pth
+
+- multiple images prediction
+
+python solution/test.py --val_images /path/to/input --masks_out_dir /path/to/output
+
+
+
 
 
 
