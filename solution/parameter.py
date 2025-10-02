@@ -40,7 +40,7 @@ def get_parameters():
     parser.add_argument("--beta2", type=float, default=0.999)    # Adam momentum
     parser.add_argument("--weight_decay", type=float, default=1e-4)     # L2 regularisation
     parser.add_argument("--warmup_epochs", type=int, default=2)
-    parser.add_argument("--min_lr", type=float, default=1e-6)
+    parser.add_argument("--min_lr", type=float, default=1e-5)
 
     # Others
     parser.add_argument("--seed", type=int, default=68)
@@ -55,6 +55,7 @@ def get_parameters():
     args = parser.parse_args()
     args.use_tensorboard = str2bool(args.use_tensorboard)
     return args
+
 
 
 
