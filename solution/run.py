@@ -14,7 +14,7 @@ from PIL import Image
 from model import UNet
 from utils import logits_to_id_mask, save_mask_png, count_trainable_params
 
-def load_model(weights_path, device, in_channel=3, num_classes=19, base_channels=16, dropout_p=0.2):
+def load_model(weights_path, device, in_channel=3, num_classes=19, base_channels=15, dropout_p=0.2):
     model = UNet(in_channel, num_classes, base_channels, dropout_p).to(device)
     n_params = count_trainable_params(model)
     print(f"Model Trainable params: {n_params}")
@@ -44,4 +44,5 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = load_model(args.weights, device)
     infer_single(model, args.input, args.output, device)
+
 
